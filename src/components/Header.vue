@@ -3,18 +3,19 @@
     <div class="img">
         <img src="../assets/img/dc-logo.png" alt="">
     </div>
-    <div class="menu">
+    <nav class="menu">
         <ul>
             <li
             v-for="(link, index) in links"
             :key="index" :class="{active: link.active}" >
             <a
+            @click="activeTab(link)"
             :class="{selected: link.active}"
             :href="link.url">{{ link.nome }}
             </a>
             </li>
         </ul>
-    </div>
+    </nav>
 </header>
 </template>
 
@@ -75,12 +76,21 @@ export default {
                     active: false
                 },
             ],
-        };
+        };  
     },
+    methods:{
+        activeTab(link) {
+            this.links.forEach(element => {
+                element.active = false;
+            });
+            link.active = true;
+        }
+    }
 }
+
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 header {
     display: flex;
@@ -109,12 +119,12 @@ a {
 
 
 .selected {
-    color: rgb(45, 143, 241);
+    color: rgb(34, 110, 211);
 }
 
 
 .active {
-    border-bottom: 5px solid rgb(45, 143, 241);
+    border-bottom: 5px solid rgb(34, 110, 211);
 }
 
 
@@ -125,6 +135,6 @@ a {
 
 
 .img img  {
-    max-width: 80px;
+    width: 80px;
 }
 </style>
