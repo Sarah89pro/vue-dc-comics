@@ -3,7 +3,8 @@
   <!--HEADER-->
   <Header/>
   <!--MAIN CONTENT-->
-  <Hero/>
+  <Jumbotron/>
+  <Cards/>
   <Main/>
   <!--FOOTER-->
   <Links/>
@@ -15,7 +16,8 @@
 
 <script>
 import Header from '../src/components/Header'
-import Hero from '../src/components/Hero'
+import Jumbotron from '../src/components/Jumbotron'
+import Cards from '../src/components/Cards'
 import Main from '../src/components/Main'
 import Links from '../src/components/Links'
 import Footer from '../src/components/Footer'
@@ -26,7 +28,8 @@ export default {
   name: 'App',
   components: {
     Header,
-    Hero,
+    Jumbotron,
+    Cards,
     Main,
     Links,
     Footer
